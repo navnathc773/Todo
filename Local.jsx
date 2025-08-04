@@ -66,7 +66,7 @@ export const Local=()=>{
                 <ul>
                     {
                         save.map((curelem) => (
-                            <li key={curelem.id} className={curelem.checked ? "checkedin":"notcheckedin"}>{curelem.content}<button style={{cursor:"pointer",position:"relative",left:"250px"}} onClick={()=>isTaskDone(curelem.content)}><IoIosCloudDone /></button><button style={{position:"relative",left:"260px"}} onClick={()=>deleteButton(curelem.content)}><MdDelete /></button></li>
+                            <li key={curelem.id} className={curelem.checked ? "checkedin":"notcheckedin"}>{curelem.content}<button style={{cursor:"pointer",position:"relative",left:"250px"}} onClick={()=>isTaskDone(curelem.content)}><IoIosCloudDone /></button><button style={{position:"relative",left:"260px",cursor:"pointer"}} onClick={()=>deleteButton(curelem.content)}><MdDelete /></button></li>
                         ))
                     }
                 </ul>
