@@ -4,11 +4,15 @@ import { IoIosCloudDone } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 
 export const Local=()=>{
+    const localData=()=>{
+       const data= localStorage.getItem('reacttodo');
+       if(!data)return [];
+       return JSON.parse(data);
+    }
     const[data,saveData]=useState({});
-    const[save,setSave]=useState([]);
+    const[save,setSave]=useState(localData);
 
     const handleinputbar=(value)=>{
-
         saveData({id:value,content:value,checked:false});
     }
 
@@ -37,6 +41,8 @@ export const Local=()=>{
     const clearAll=()=>{
         setSave([]);
     }
+
+    localStorage.setItem("reacttodo",JSON.stringify(save));
 
     const isTaskDone=(value)=>{
         const taskDone=save.map((curelem)=>{
